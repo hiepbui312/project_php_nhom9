@@ -114,7 +114,14 @@
           <li class="nav-item">
             <a href="index.php?controller=store&action=ngan_sach" class="nav-link no-active" >
               <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Ngân sách cửa hang</span>
+              <span class="link-title">Ngân sách cửa hàng</span>
+            </a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a href="index.php?controller=ThongKe" class="nav-link no-active" >
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Báo cáo thống kê</span>
             </a>
           </li>
         </ul>

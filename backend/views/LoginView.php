@@ -30,7 +30,7 @@
 							<div class="row">
                 <div class="col-md-4 pr-md-0">
                   <div class="auth-left-wrapper">
-                  	<img style="width: 100%; height: 377px;" src="../assets/backend/images/Nhom 9.png">
+                  	<img style="width: 100%; height: 377px;" src="../assets/backend/images/asd.png">
                   </div>
                 </div>
                 <div class="col-md-8 pl-md-0">

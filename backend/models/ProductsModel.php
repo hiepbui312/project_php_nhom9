@@ -10,7 +10,7 @@
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();
 			//thuc hien truy van
-			$query = $conn->query("select * from products order by id desc limit $from,$recordPerPage");
+			$query = $conn->query("select * from products order by category_id desc limit $from,$recordPerPage");
 			//lay toan bo ket qua tra ve
 			$result = $query->fetchAll();			
 			//---
@@ -28,7 +28,7 @@
 		public function modelGetRecord($id){
 			//lay bien ket noi
 			$conn = Connection::getInstance();
-			$query = $conn->query("select * from products where id=$id");
+			$query = $conn->query("select products.*, categories.name as category_name from products inner join categories on products.category_id = categories.id where products.id=$id");
 			//tra ve mot ban ghi
 			return $query->fetch();
 		}		
@@ -80,6 +80,19 @@
 			//lay bien ket noi
 			$conn = Connection::getInstance();
 			$query = $conn->query("select * from categories order by id desc");
+			$result = $query->fetchAll();
+			return $result;
+		}
+		public function modelSearchRecord($recordPerPage){
+			//lay bien p truyen tu url
+			$p = isset($_GET["p"]) && is_numeric($_GET["p"]) && $_GET["p"] > 0 ? ($_GET["p"]-1) : 0;			
+			//lay tu ban ghi nao
+			$from = $p * $recordPerPage;
+			//---
+			$maSp = isset($_POST["maSp"]) ? $_POST["maSp"] : '';
+			$nhomSp = isset($_POST["nhomSp"]) ? $_POST["nhomSp"] : '';
+			$conn = Connection::getInstance();
+			$query = $conn->query("select products.* from products inner join categories on products.category_id = categories.id  where products.ma_hang like '%$maSp%' and categories.name like '%$nhomSp%' order by category_id desc limit $from,$recordPerPage");
 			$result = $query->fetchAll();
 			return $result;
 		}

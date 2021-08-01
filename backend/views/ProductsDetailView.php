@@ -43,6 +43,10 @@
                     <th style="width: 100px;">Giá</th>
                     <td><?php echo $data->price; ?></td>
                 </tr>
+                <tr>
+                    <th style="width: 100px;">Loại sản phẩm</th>
+                    <td><?php echo $data->category_name; ?></td>
+                </tr>
             </table>
             <!-- /thong tin -->      
         </div>

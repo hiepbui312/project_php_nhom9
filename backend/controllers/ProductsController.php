@@ -68,5 +68,13 @@
 			$data = $this->modelGetRecord($id);
 			$this->loadView("ProductsDetailView.php",['data' => $data]);	
 		}
+		public function search(){
+			//dinh nghia so ban ghi tren mot trang
+			$recordPerPage = 25;
+			//tinh tong so trang
+			$numPage = ceil($this->totalRecord($recordPerPage)/$recordPerPage);
+			$data = $this->modelSearchRecord($recordPerPage);
+			$this->loadView("ProductsView.php",["data"=>$data, 'numPage' => $numPage]);
+		}
 	}
  ?>
