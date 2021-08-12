@@ -1,12 +1,4 @@
 <!-- load file layout chung -->
-<?php $this->layoutPath = "Layout.php" ?>
-    <div class="col-md-12">
-                <style type="text/css">
-                    .pagination{padding:0px; margin:0px; float: right; margin-top: 5px;}
-                </style>
-        <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body"><!-- load file layout chung -->
 <?php $this->layoutPath = "Layout.php"; ?>
 <div class="col-md-12">  	
     <div class="card" style="padding: 20px;">

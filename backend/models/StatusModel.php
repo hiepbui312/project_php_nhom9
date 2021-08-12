@@ -58,7 +58,10 @@
 			$conn = Connection::getInstance();
 			$order_detail = $this->getOrderDetail($id);  
 			$conn->query("delete from order_detail where id = $id");
-			$conn->query("delete from orders where id = $order_detail->order_id");
+			$checkOrder =  $conn->query("select * from order_detail where order_id = $order_detail->order_id");
+			if(empty($checkOrder)){
+				$conn->query("delete from orders where id = $order_detail->order_id");
+			}
 		}
 		public function ngan_sach(){
 			$conn = Connection::getInstance();

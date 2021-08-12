@@ -14,7 +14,10 @@
 				if($result->password == $password){
 					//dang nhap thanh cong
 					$_SESSION["email"]=$email;
+					return true;
 				}
+			} else {
+				return false;
 			}
 		}
 	}		

@@ -32,7 +32,7 @@
                                                 <?php echo $rows->ma_hang; ?>
                                             </td>
                                             <td style="text-align:center;">
-                                                <?php echo number_format($rows->ton_kho); ?>đ
+                                                <?php echo number_format($rows->ton_kho); ?>
                                             </td>
                                             <td style="text-align:center;">
                                                 <a href="index.php?controller=products&action=detail&id=<?php echo $rows->id ?>">Chi tiết sản phẩm</a>

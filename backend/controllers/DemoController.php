@@ -4,9 +4,9 @@
 	class DemoController extends Controller{
 		//su dung file model o day
 		use DemoModel;
-		//ham tao
+		
         public function __construct(){
-			//kiem tra neu gio hang chua ton tai thi khoi tao no
+			$this->authentication();
 			if(!isset($_SESSION["demoCart"]))
 				$_SESSION["demoCart"] = array();
 		}

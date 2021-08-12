@@ -26,14 +26,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item disabled"><a class="page-link" href="#">Page</a></li>
-                                    <?php for($i = 1;$i <= $numPage; $i++): ?>
-                                        <li><a class="page-link" href="index.php?controller=products&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
-                                        <?php endfor; ?>
-                                </ul>
-                                </nav>
                         </div>
             </div>
         </div>

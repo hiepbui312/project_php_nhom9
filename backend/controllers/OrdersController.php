@@ -2,6 +2,10 @@
 	include "Models/OrdersModel.php";
 	class OrdersController extends Controller{
 		use OrdersModel;
+		public function __construct(){
+			$this->authentication();
+		}
+		
 		public function index(){
 			//quy dinh so ban ghi tren mot trang
 			$recordPerPage = 25;

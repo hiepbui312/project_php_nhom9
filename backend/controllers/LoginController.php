@@ -7,14 +7,18 @@
 		use LoginModel;
 		public function index()
 		{
-			$this->loadView("LoginView.php");
+			$message = isset($_GET['message']) ? $_GET['message'] : '';
+			$this->loadView("LoginView.php", ['message' => $message]);
 		}
 		
 		public function login()
 		{
-			$this->modelLogin();
-			//quay lai trang index
-			header("location:index.php");
+			$failMessage = 'dang nhap that bai';
+			if($this->modelLogin()) {
+				header("location:index.php");
+			} else {
+				header("location:index.php?controller=login&message=$failMessage");
+			}
 		}
 
 		public function logout()

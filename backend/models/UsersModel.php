@@ -33,12 +33,19 @@
 			return $query->fetch();
 		}
 		public function modelCreate(){
-			//--
+			$conn = Connection::getInstance();
 			$email = $_POST["email"];
 			$password = $_POST["password"];
 			$password = md5($password);
-			$conn = Connection::getInstance();
-			$query=$conn->query("insert into users set email='$email', password='$password'");
+			$query = $conn->query("select * from users");
+			$emails = $query->fetchAll();
+			foreach($emails as $row) {
+				if($row->email == $email) {
+					return false;
+				}
+			}
+			$conn->query("insert into users set email='$email', password='$password'");
+			return true;
 		}
 		//update bản ghi
 		public function modelUpdate($id){

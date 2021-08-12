@@ -30,7 +30,7 @@
 							<div class="row">
                 <div class="col-md-4 pr-md-0">
                   <div class="auth-left-wrapper">
-                  	<img style="width: 100%; height: 377px;" src="../assets/backend/images/asd.png">
+                  	<img style="width: 100%; height: 427px;" src="../assets/backend/images/asd.png">
                   </div>
                 </div>
                 <div class="col-md-8 pl-md-0">
@@ -46,6 +46,10 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" name="password" required class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Password">
                       </div>
+					  <div style="color: red">
+					 	 <?php  echo isset($message) ? $message : '' ?>
+					  </div>
+					 
                       <div class="form-check form-check-flat form-check-primary">
                       </div>
                       <div class="mt-3">

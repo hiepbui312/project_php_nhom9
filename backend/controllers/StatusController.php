@@ -2,6 +2,9 @@
 	include "Models/StatusModel.php";
 	class StatusController extends Controller{
 		use OrdersModel;
+		public function __construct(){
+			$this->authentication();
+		}
 		public function sell(){
 			//quy dinh so ban ghi tren mot trang
 			$recordPerPage = 25;

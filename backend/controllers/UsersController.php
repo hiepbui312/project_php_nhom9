@@ -48,9 +48,9 @@
         public function createPost(){
             //gọi hàm từ model để lấy dữ liệu 
            	if($this->modelCreate())
-            //di chuyển đến url
-            header("location:index.php?controller=users");
-            else header("location:index.php?controller=users&action=create&notify=emailExists");
+            	header("location:index.php?controller=users");
+            else 
+				header("location:index.php?controller=users&action=create&notify=emailExists");
         }
 		public function delete(){
 			// lay bien id truyen tu url
