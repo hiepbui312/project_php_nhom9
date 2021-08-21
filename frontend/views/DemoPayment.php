@@ -13,7 +13,7 @@
             <table class="table">
                 <tr>
                     <th style="width: 100px;">Họ tên</th>
-                    <td><?php echo $_SESSION['email']; ?></td>
+                    <td><?php echo $_SESSION['customer']; ?></td>
                 </tr>
                 <?php $tt = 0; ?>
                 <?php foreach($_SESSION["demoCart"] as $rows): ?>

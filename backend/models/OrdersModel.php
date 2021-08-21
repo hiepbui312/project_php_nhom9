@@ -8,7 +8,7 @@
 			$from = $page * $recordPerPage;
 			//thuc hien truy van
 			$conn = Connection::getInstance();
-			$query = $conn->query("select users.email as users, orders.* from orders inner join users on orders.user_id = users.id order by orders.id desc limit $from, $recordPerPage");
+			$query = $conn->query("select customers.name as users, orders.* from orders inner join customers on orders.customer_id = customers.id order by orders.id desc limit $from, $recordPerPage");
 			//tra ve tat ca cac ban truy van duoc
 			return $query->fetchAll();
 		}
@@ -34,7 +34,7 @@
 		public function modelGetCustomers($id){
 			//---
 			$conn = Connection::getInstance();
-			$query = $conn->query("select * from users where id = $id");
+			$query = $conn->query("select * from customers where id = $id");
 			//tra ve mot ban ghi
 			return $query->fetch();
 			//---

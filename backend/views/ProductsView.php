@@ -51,7 +51,7 @@
                                     </td>
                                     <td style="text-align:center;">
                             <a class="btn btn-success" href="index.php?controller=products&action=update&id=<?php echo $rows->id; ?>">Chỉnh sửa</a>&nbsp;
-                            <a class="btn btn-danger" href="index.php?controller=products&action=delete&id=<?php echo $rows->id; ?>" onclick="return window.confirm('Mày chắc chưa?');">Xóa</a>
+                            <a class="btn btn-danger" href="index.php?controller=products&action=delete&id=<?php echo $rows->id; ?>" onclick="return window.confirm('Bạn có chắc?');">Xóa</a>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>

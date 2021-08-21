@@ -7,7 +7,7 @@
         <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Danh sách Orders</h6>
+                <h6 class="card-title">Danh sách đơn hàng</h6>
                 <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead>

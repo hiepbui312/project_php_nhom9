@@ -32,7 +32,7 @@
                                                     <td><a href="index.php?controller=customers&action=detail&id=<?php echo $row->id; ?>">Chi tiết khách hàng</a></td>
                                                     <td style="text-align:center;">
                                             <a class="btn btn-success" href="index.php?controller=customers&action=update&id=<?php echo $row->id; ?>">EDIT</a>&nbsp;
-                                            <a class="btn btn-danger" href="index.php?controller=customers&action=delete&id=<?php echo $row->id; ?>" onclick="return window.confirm('Mày chắc chưa?');">DELETE</a>
+                                            <a class="btn btn-danger" href="index.php?controller=customers&action=delete&id=<?php echo $row->id; ?>" onclick="return window.confirm('Bạn có chắc?');">DELETE</a>
                                         </td>
                                                 </tr>
                                                 <?php endforeach; ?>

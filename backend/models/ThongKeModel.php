@@ -9,7 +9,7 @@ trait ThongKeModel{
         $conn = Connection::getInstance();
         // $query = $conn->query("select count(id) as order_quantity, count(user_id) as customer_quantity, sum(price) as total_money
         //  from orders where date BETWEEN date_sub(now(), INTERVAL 1 day) AND now()");
-        $query = $conn->query("select date, count(id) as order_quantity, count(user_id) as customer_quantity, sum(price) as total_money
+        $query = $conn->query("select date, count(id) as order_quantity, count(customer_id) as customer_quantity, sum(price) as total_money
          from orders where date BETWEEN '$date1' AND '$date2' group by date");
         return $query->fetchAll();
     }

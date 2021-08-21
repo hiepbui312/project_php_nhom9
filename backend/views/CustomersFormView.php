@@ -7,7 +7,7 @@
                         
                             <div class="card">
                             <div class="card-body">
-                                <h6 class="card-title">ADD/EDIT CUSTOMERS</h6>
+                                <h6 class="card-title">Thêm/Chỉnh sửa thông tin khách hàng</h6>
                                 <form class="forms-sample" method="post" action="<?php echo $action; ?>">
                                     <div class="form-group">
                                         <label for="exampleInputUsername1">Tên</label>

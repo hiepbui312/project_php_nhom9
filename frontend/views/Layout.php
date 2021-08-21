@@ -38,91 +38,13 @@
       </div>
       <div class="sidebar-body">
         <ul class="nav">
-          <li class="nav-item nav-category">Main</li>
+        <li class="nav-item nav-category">Mua hàng</li>
           <li class="nav-item">
-            <a href="index.php?controller=home" class="nav-link">
+            <a href="index.php?controller=demo" class="nav-link no-active" >
               <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Trang chủ</span>
-            </a>
-          </li> 
-          <!-- manage -->
-          <li class="nav-item nav-category">Bán hàng</li>
-          <li class="nav-item">
-            <a href="index.php?controller=orders" class="nav-link">
-              <i class="link-icon" data-feather="calendar"></i>
-              <span class="link-title">Danh sách orders</span>
+              <span class="link-title">Mua hàng</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="index.php?controller=categories" class="nav-link">
-              <i class="link-icon" data-feather="list"></i>
-              <span class="link-title">Danh mục sản phẩm</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?controller=products" class="nav-link">
-              <i class="link-icon" data-feather="shopping-bag"></i>
-              <span class="link-title">Danh sách sản phẩm</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#errorPages2" role="button" aria-expanded="false" aria-controls="errorPages22">
-                <i class="link-icon" data-feather="grid"></i>
-                <span class="link-title">Tình trạng cửa hàng</span>
-                <i class="link-arrow" data-feather="chevron-down"></i>
-            </a>
-            <div class="collapse" id="errorPages2">
-                <ul class="nav sub-menu">
-                <li class="nav-item">
-                    <a href="index.php?controller=status&action=sell" class="nav-link">Danh sách bán hàng</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?controller=status&action=tra_hang_view" class="nav-link">Danh sách trả hàng</a>
-                </li>
-                </ul>
-            </div>
-          </li>
-
-
-          <!-- /manage -->
-          <li class="nav-item nav-category">Khách hàng</li>
-          <li class="nav-item">
-            <a href="index.php?controller=users" class="nav-link no-active" >
-              <i class="link-icon" data-feather="users"></i>
-              <span class="link-title">Quản lí users</span>
-            </a>
-            <a href="index.php?controller=customers" class="nav-link no-active" >
-              <i class="link-icon" data-feather="users"></i>
-              <span class="link-title">Quản lí Customer</span>
-            </a>
-          </li>
-          <!-- ádasdasd -->
-          <li class="nav-item nav-category">Quản lý của hàng</li>
-          <li class="nav-item">
-            <a href="index.php?controller=store&action=ton_kho" class="nav-link no-active" >
-              <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Hàng tồn kho</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?controller=store&action=ngan_sach" class="nav-link no-active" >
-              <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Ngân sách cửa hàng</span>
-            </a>
-          </li>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?controller=ThongKe" class="nav-link no-active" >
-              <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Báo cáo thống kê</span>
-            </a>
-          </li>
-          <!-- <li class="nav-item">
-            <a href="index.php?controller=ThongKe&action=getChiTieu" class="nav-link no-active" >
-              <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Quản lý chi tiêu</span>
-            </a>
-          </li> -->
         </ul>
       </div>
     </nav>
@@ -146,8 +68,9 @@
                                         <img src="https://via.placeholder.com/80x80" alt="">
                                     </div>
                                     <div class="info text-center">
-                                        <p class="name font-weight-bold mb-0"><?php echo $_SESSION['email'] ?></p>
+                                        <p class="name font-weight-bold mb-0"><?php echo $_SESSION['customer'] ?></p>
                                     </div>
+                                   
                                 </div>
                                 <div class="dropdown-body">
                                     <ul class="profile-nav p-0 pt-3">

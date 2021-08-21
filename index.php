@@ -1,4 +1,4 @@
 <?php 
 	//di chuyen den trang frontend
-	header("location:backend/index.php");
+	header("location:frontend/index.php");
  ?>

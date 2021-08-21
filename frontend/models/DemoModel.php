@@ -46,9 +46,9 @@
 		}
 		public function getUser()
 		{
-			$email = $_SESSION['email'];
+			$name = $_SESSION['customer'];
 			$conn = Connection::getInstance();
-			$query = $conn->query("select * from users where email ='$email'");
+			$query = $conn->query("select * from customers where name ='$name'");
 			return $query->fetch();	       
 		}
 		public function ngan_sach(){
@@ -58,7 +58,7 @@
 		}
 		public function cartCheckOut($id, $tt){
 			$conn = Connection::getInstance();
-			$conn->query("insert into orders set user_id=$id, date = now(), price = $tt");
+			$conn->query("insert into orders set customer_id=$id, date = now(), price = $tt");
 			$order_id = $conn->lastInsertId();  
 			foreach($_SESSION["demoCart"] as $product){
 				$query = $conn->query("select * from products where id =".$product['id']);

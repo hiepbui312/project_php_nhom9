@@ -7,17 +7,17 @@
     <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-        <h6 class="card-title">Detail order</h6>
+        <h6 class="card-title">Chi tiết đơn hàng</h6>
         <div class="panel-body">
             <!-- thong tin don hang -->
             <?php  
                 $order = $this->modelGetOrders($id);
-                $customer = $this->modelGetCustomers($order->user_id);
+                $customer = $this->modelGetCustomers($order->customer_id);
              ?>
             <table class="table">
                 <tr>
                     <th style="width: 100px;">Họ tên</th>
-                    <td><?php echo $customer->email; ?></td>
+                    <td><?php echo $customer->name; ?></td>
                 </tr>
                 <tr>
                     <th style="width: 100px;">Tổng tiền</th>
@@ -47,7 +47,8 @@
                         <td style="text-align: center;"><?php echo number_format($rows->quantity*$product->price); ?>đ</td>
                     </tr>
                 <?php endforeach; ?>
-            </table>            
+            </table>
+            <button onclick="window.print();" class="btn btn-primary" style="margin-top: 20px; float: right;">In hóa đơn</button>            
         </div>
     </div>
     </div>

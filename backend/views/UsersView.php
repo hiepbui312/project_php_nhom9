@@ -8,9 +8,9 @@
                 <div class="card">
                     <div class="card-body">
                                 <div style=" float: right;">
-                                    <a href="index.php?controller=users&action=create" class="btn btn-primary"><h6>ADD USER&nbsp <i class="link-icon" data-feather="user-plus"></i></h6></a>
+                                    <a href="index.php?controller=users&action=create" class="btn btn-primary"><h6>Thêm mới admin&nbsp <i class="link-icon" data-feather="user-plus"></i></h6></a>
                                 </div>
-                                <h6 class="card-title">Danh sách users</h6>
+                                <h6 class="card-title">Danh sách admin</h6>
                                 <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
@@ -26,8 +26,8 @@
                                                     <th><?php echo $row->id; ?></th>
                                                     <td><?php echo $row->email; ?></td>
                                                     <td style="text-align:center;">
-                                            <a class="btn btn-success" href="index.php?controller=users&action=update&id=<?php echo $row->id; ?>">EDIT</a>&nbsp;
-                                            <a class="btn btn-danger" href="index.php?controller=users&action=delete&id=<?php echo $row->id; ?>" onclick="return window.confirm('Ban co muon xoa?');">DELETE</a>
+                                            <a class="btn btn-success" href="index.php?controller=users&action=update&id=<?php echo $row->id; ?>">Chỉnh sửa</a>&nbsp;
+                                            <a class="btn btn-danger" href="index.php?controller=users&action=delete&id=<?php echo $row->id; ?>" onclick="return window.confirm('Ban co muon xoa?');">Xóa</a>
                                         </td>
                                                 </tr>
                                                 <?php endforeach; ?>

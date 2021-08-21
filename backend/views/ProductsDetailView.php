@@ -7,7 +7,7 @@
     <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-        <h6 class="card-title">Detail order</h6>
+        <h6 class="card-title">Chi tiết sản phẩm</h6>
         <div class="panel-body">
             <!-- thong tin don hang -->
             <table class="table">

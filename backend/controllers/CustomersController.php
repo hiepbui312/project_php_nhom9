@@ -39,11 +39,19 @@
 	            //di chuyển đến url
 	            header("location:index.php?controller=Customers");
         }
+		
 		public function create(){
             //tạo biến $action để đưa vào thuộc tính action của form 
             $action = "index.php?controller=Customers&action=createPost";
             //gọi view, truyền dữ liệu ra view
             $this->loadView("CustomersFormView.php",["action"=>$action]);
+        }
+
+        public function createPost(){
+            //gọi hàm từ model để lấy dữ liệu 
+        	 $this->modelCreate();
+            //di chuyển đến url
+            header("location:index.php?controller=Customers");
         }
 
 		public function detail(){
@@ -52,13 +60,6 @@
             $this->loadView("CustomerDetailView.php",["customer"=>$customer]);
         }
 
-        public function createPost(){
-            //gọi hàm từ model để lấy dữ liệu 
-        	 $this->modelCreate();
-            //di chuyển đến url
-            header("location:index.php?controller=Customers");
-
-        }
 		public function delete(){
 			// lay bien id truyen tu url
 			$id = isset($_GET["id"]) ? $_GET["id"] : 0;

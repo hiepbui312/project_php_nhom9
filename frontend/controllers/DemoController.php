@@ -6,7 +6,8 @@
 		use DemoModel;
 		
         public function __construct(){
-			$this->authentication();
+			if (!isset($_SESSION["customer"]))
+			 	header("location:index.php?controller=login");
 			if(!isset($_SESSION["demoCart"]))
 				$_SESSION["demoCart"] = array();
 		}
@@ -43,7 +44,7 @@
 			$user = $this->getUser();
 			$this->cartCheckOut($user->id, $tt);
 			$_SESSION["demoCart"] = array();
-			header("location:index.php?controller=demo&notify=checkoutsuccess");
+			header("location:index.php?controller=demo");
 		}
 	}
  ?>
