@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2021 at 01:39 PM
+-- Generation Time: Aug 12, 2021 at 12:55 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -61,12 +61,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `phone`, `password`, `thoi_quen`, `so_thich`, `sinh_nhat`) VALUES
-(2, 'hiep', 971086969, '4297f44b13955235245b2497399d7a93', 'dep trai', 'dit bu', '2000-03-01'),
-(3, 'hao', 2147483647, '4297f44b13955235245b2497399d7a93', 'an', 'ngu', '2000-03-03'),
-(4, 'le hao', 123123123, '4297f44b13955235245b2497399d7a93', 'hoc', 'hoc', '2000-11-11'),
-(6, 'hiep', 0, '202cb962ac59075b964b07152d234b70', '123', '123', '2021-08-09'),
-(7, 'cong', 123, '202cb962ac59075b964b07152d234b70', '123', '123', '2021-08-17'),
-(8, 'hiep123', 123, '202cb962ac59075b964b07152d234b70', '123', '123', '2021-08-16');
+(2, 'hiep', 971086969, '4297f44b13955235245b2497399d7a93', 'dep trai', 'dit bu', '2000-03-01');
 
 -- --------------------------------------------------------
 
@@ -84,7 +79,7 @@ CREATE TABLE `ngan_sach` (
 --
 
 INSERT INTO `ngan_sach` (`price`, `id`) VALUES
-(1105000000, 1);
+(1079000000, 1);
 
 -- --------------------------------------------------------
 
@@ -94,7 +89,7 @@ INSERT INTO `ngan_sach` (`price`, `id`) VALUES
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `date` date NOT NULL,
   `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -103,9 +98,11 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `customer_id`, `date`, `price`) VALUES
-(25, 8, '2021-08-21', 7000000),
-(26, 7, '2021-08-21', 12000000);
+INSERT INTO `orders` (`id`, `user_id`, `date`, `price`) VALUES
+(18, 1, '2021-07-20', 2000000),
+(19, 1, '2021-08-01', 2000000),
+(22, 1, '2021-08-01', 14000000),
+(23, 1, '2021-08-12', 19000000);
 
 -- --------------------------------------------------------
 
@@ -131,11 +128,7 @@ INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `quantity`) VALUES
 (27, 22, 11, 1),
 (29, 23, 12, 1),
 (30, 23, 11, 2),
-(31, 23, 10, 1),
-(32, 24, 12, 1),
-(33, 25, 12, 1),
-(34, 26, 12, 1),
-(35, 26, 11, 1);
+(31, 23, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -167,8 +160,22 @@ INSERT INTO `products` (`id`, `name`, `category_id`, `ma_hang`, `bao_hanh`, `so_
 (8, 'macbook m1', 3, '12332144', 6, '123', '123', 9, 'My', 7000000),
 (9, 'iphone 8', 1, '123123', 6, '312', '123', 19, 'Trung quoc', 1000000),
 (10, 'iphone 9', 1, '123321', 6, '123', '123', 8, 'My', 2000000),
-(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 6, 'Trung quoc', 5000000),
-(12, 'macbook m2', 3, '12332144', 6, '123', '123', 4, 'My', 7000000);
+(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 7, 'Trung quoc', 5000000),
+(12, 'macbook m2', 3, '12332144', 6, '123', '123', 7, 'My', 7000000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thong_ke`
+--
+
+CREATE TABLE `thong_ke` (
+  `id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `total_money` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -255,6 +262,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `thong_ke`
+--
+ALTER TABLE `thong_ke`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tra_hang`
 --
 ALTER TABLE `tra_hang`
@@ -280,7 +293,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ngan_sach`
@@ -292,19 +305,25 @@ ALTER TABLE `ngan_sach`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `thong_ke`
+--
+ALTER TABLE `thong_ke`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tra_hang`
