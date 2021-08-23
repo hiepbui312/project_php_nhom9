@@ -36,15 +36,15 @@
                 <div class="col-md-8 pl-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
                     <a href="#" class="noble-ui-logo d-block mb-2">Nhom 9</a>
-                    <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>
+                    <h5 class="text-muted font-weight-normal mb-4">Đăng nhập</h5>
                     <form class="forms-sample" method="post" action="index.php?controller=login&action=login">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Tài khoản email</label>
                         <input type="email" name="email" required class="form-control" id="exampleInputEmail1" placeholder="Email">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" required class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Password">
+                        <label for="exampleInputPassword1">Mật khẩu</label>
+                        <input type="password" name="password" required class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Mật khẩu">
                       </div>
 					  <div style="color: red">
 					 	 <?php  echo isset($message) ? $message : '' ?>

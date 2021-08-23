@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2021 at 01:39 PM
+-- Generation Time: Aug 23, 2021 at 10:11 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -84,7 +84,7 @@ CREATE TABLE `ngan_sach` (
 --
 
 INSERT INTO `ngan_sach` (`price`, `id`) VALUES
-(1105000000, 1);
+(1117000000, 1);
 
 -- --------------------------------------------------------
 
@@ -104,8 +104,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `date`, `price`) VALUES
-(25, 8, '2021-08-21', 7000000),
-(26, 7, '2021-08-21', 12000000);
+(27, 8, '2021-08-23', 14000000);
 
 -- --------------------------------------------------------
 
@@ -125,17 +124,8 @@ CREATE TABLE `order_detail` (
 --
 
 INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `quantity`) VALUES
-(21, 18, 6, 1),
-(22, 19, 6, 1),
-(26, 22, 12, 1),
-(27, 22, 11, 1),
-(29, 23, 12, 1),
-(30, 23, 11, 2),
-(31, 23, 10, 1),
-(32, 24, 12, 1),
-(33, 25, 12, 1),
-(34, 26, 12, 1),
-(35, 26, 11, 1);
+(36, 27, 12, 1),
+(37, 27, 11, 1);
 
 -- --------------------------------------------------------
 
@@ -167,8 +157,8 @@ INSERT INTO `products` (`id`, `name`, `category_id`, `ma_hang`, `bao_hanh`, `so_
 (8, 'macbook m1', 3, '12332144', 6, '123', '123', 9, 'My', 7000000),
 (9, 'iphone 8', 1, '123123', 6, '312', '123', 19, 'Trung quoc', 1000000),
 (10, 'iphone 9', 1, '123321', 6, '123', '123', 8, 'My', 2000000),
-(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 6, 'Trung quoc', 5000000),
-(12, 'macbook m2', 3, '12332144', 6, '123', '123', 4, 'My', 7000000);
+(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 5, 'Trung quoc', 5000000),
+(12, 'macbook m2', 3, '12332144', 6, '123', '123', 3, 'My', 7000000);
 
 -- --------------------------------------------------------
 
@@ -191,9 +181,7 @@ CREATE TABLE `tra_hang` (
 --
 
 INSERT INTO `tra_hang` (`id`, `product_name`, `product_price`, `quantity`, `order_date`, `customer_email`, `tt`) VALUES
-(14, 'iphone 7', 2000000, 1, '2021-07-22', 'nva@gmail.com', 2000000),
-(15, 'macbook m2', 7000000, 1, '2021-08-01', 'nva@gmail.com', 7000000),
-(16, 'iphone 9', 2000000, 1, '2021-08-01', 'nva@gmail.com', 2000000);
+(17, 'iphone 9', 2000000, 1, '2021-08-23', '', 2000000);
 
 -- --------------------------------------------------------
 
@@ -292,13 +280,13 @@ ALTER TABLE `ngan_sach`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -310,7 +298,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `tra_hang`
 --
 ALTER TABLE `tra_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`

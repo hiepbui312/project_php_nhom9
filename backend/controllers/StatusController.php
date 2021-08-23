@@ -1,7 +1,7 @@
 <?php 
 	include "Models/StatusModel.php";
 	class StatusController extends Controller{
-		use OrdersModel;
+		use StatusModel;
 		public function __construct(){
 			$this->authentication();
 		}

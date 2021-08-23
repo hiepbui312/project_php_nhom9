@@ -1,5 +1,5 @@
 <?php 
-	trait OrdersModel{
+	trait StatusModel{
 		//ham liet ke danh sach cac ban ghi, co phan trang
 		public function modelReadSell($recordPerPage){
 			//lay so trang hien tai truyen tu url
@@ -46,7 +46,7 @@
         }
         public function getCustomer($id){
             $conn = Connection::getInstance();
-			$query = $conn->query("select * from users where id = $id");
+			$query = $conn->query("select * from customers where id = $id");
             return $query->fetch();
         }
 		public function getOrderDetail($id){
@@ -72,7 +72,7 @@
 			$order_detail = $this->getOrderDetail($id);  
 			$order = $this->getOrder($order_detail->order_id);  
             $product = $this->getProduct($order_detail->product_id); 
-            $customer = $this->getCustomer($order->user_id);
+            $customer = $this->getCustomer($order->customer_id);
 			$tt = $product->price*$order_detail->quantity;
 			$conn = Connection::getInstance();
 			$product_name = $product->name;

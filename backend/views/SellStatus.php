@@ -21,14 +21,14 @@
                     <?php 
                         $order = $this->getOrder($rows->order_id);  
                         $product = $this->getProduct($rows->product_id); 
-                        $customer = $this->getCustomer($order->user_id);    
+                        $customer = $this->getCustomer($order->customer_id);    
                     ?>
                     <tr>
                         <td style="text-align: center;"><?php echo $product->name; ?></td>
                         <td style="text-align: center;"><?php echo $product->price; ?></td>
                         <td style="text-align: center;"><?php echo $rows->quantity; ?></td>
                         <td style="text-align: center;"><?php echo $order->date; ?></td>
-                        <td style="text-align: center;"><?php echo $customer->email; ?></td>
+                        <td style="text-align: center;"><?php echo $customer->name; ?></td>
                         <td style="text-align: center;"><?php echo $product->price*$rows->quantity; ?></td>
                         <td style="text-align:center;">
                             <a class="btn btn-primary" href="index.php?controller=status&action=tra_hang&id=<?php echo $rows->id; ?>">Trả hàng</a>&nbsp;
