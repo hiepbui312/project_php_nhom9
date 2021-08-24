@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2021 at 10:11 AM
+-- Generation Time: Aug 24, 2021 at 06:34 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -84,7 +84,7 @@ CREATE TABLE `ngan_sach` (
 --
 
 INSERT INTO `ngan_sach` (`price`, `id`) VALUES
-(1117000000, 1);
+(1141000000, 1);
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,12 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `date`, `price`) VALUES
-(27, 8, '2021-08-23', 14000000);
+(27, 8, '2021-08-23', 14000000),
+(28, 8, '2021-08-23', 12000000),
+(29, 8, '2021-08-23', 12000000),
+(30, 8, '2021-08-31', 14000000),
+(31, 8, '2021-08-18', 12000000),
+(32, 8, '2021-08-18', 12000000);
 
 -- --------------------------------------------------------
 
@@ -125,7 +130,11 @@ CREATE TABLE `order_detail` (
 
 INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `quantity`) VALUES
 (36, 27, 12, 1),
-(37, 27, 11, 1);
+(37, 27, 11, 1),
+(39, 28, 12, 1),
+(40, 28, 11, 1),
+(41, 29, 12, 1),
+(42, 29, 11, 1);
 
 -- --------------------------------------------------------
 
@@ -157,8 +166,8 @@ INSERT INTO `products` (`id`, `name`, `category_id`, `ma_hang`, `bao_hanh`, `so_
 (8, 'macbook m1', 3, '12332144', 6, '123', '123', 9, 'My', 7000000),
 (9, 'iphone 8', 1, '123123', 6, '312', '123', 19, 'Trung quoc', 1000000),
 (10, 'iphone 9', 1, '123321', 6, '123', '123', 8, 'My', 2000000),
-(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 5, 'Trung quoc', 5000000),
-(12, 'macbook m2', 3, '12332144', 6, '123', '123', 3, 'My', 7000000);
+(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 3, 'Trung quoc', 5000000),
+(12, 'macbook m2', 3, '12332144', 6, '123', '123', 1, 'My', 7000000);
 
 -- --------------------------------------------------------
 
@@ -280,13 +289,13 @@ ALTER TABLE `ngan_sach`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `products`
