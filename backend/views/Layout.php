@@ -20,6 +20,7 @@
   <!-- End layout styles -->
   <link rel="shortcut icon" href="../assets/backend/images/favicon.png" />
   <script type="text/javascript" src="../assets/backend/ckeditor/ckeditor.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="main-wrapper">
