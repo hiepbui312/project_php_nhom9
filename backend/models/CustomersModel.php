@@ -52,11 +52,14 @@
 			//--
 			$name = $_POST["name"];
 			$password = $_POST["password"];
-			$address = $_POST["address"];
 			$phone = $_POST["phone"];
+			$thoi_quen = $_POST["thoi_quen"];
+			$so_thich = $_POST["so_thich"];
+			$sinh_nhat = $_POST["sinh_nhat"];
 			//lay bien ket noi
 			$conn = Connection::getInstance();
-			$query=$conn->query("update customers set name='$name', address='$address', phone='$phone' where id=$id");
+			$conn->query("update customers set name='$name', phone='$phone',
+			thoi_quen='$thoi_quen', so_thich='$so_thich', sinh_nhat='$sinh_nhat' where id=$id");
 			//neu password khong rong thi update password
 			if($password != ""){
 				//ma hoa password

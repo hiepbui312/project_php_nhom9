@@ -34,7 +34,7 @@
                                         <input type="date" value="<?php echo isset($record->sinh_nhat) ? $record->sinh_nhat:''; ?>" name="sinh_nhat" class="form-control" required>
                                     </div>
                                     <input type="submit" value="Process" class="btn btn-primary">
-                                    <button class="btn btn-light">Cancel</button>
+                                    <a class="btn btn-light" href="index.php?controller=customers&action=index">Cancel</a>
                                 </form>
                             </div>
                         </div>

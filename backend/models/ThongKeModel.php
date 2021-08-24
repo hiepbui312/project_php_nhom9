@@ -37,6 +37,5 @@ trait ThongKeModel{
          from orders where date BETWEEN '$date1' AND '$date2' group by date");
         return $query->fetchAll();
     }
-
 }
 ?>
