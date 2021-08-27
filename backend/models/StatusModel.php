@@ -79,10 +79,10 @@
 			$product_price = $product->price;
 			$quantity =  $order_detail->quantity;
 			$order_date =  $order->date;
-			$customer_email = $customer->email;
+			$customer_name = $customer->name;
 			$ton_kho = $product->ton_kho + $quantity;
 			$conn->query("insert into tra_hang set product_name ='$product_name', product_price = $product_price,
-			quantity = $quantity, order_date = '$order_date', customer_email = '$customer_email', tt = $tt ");
+			quantity = $quantity, order_date = '$order_date', customer_name = '$customer_name', tt = $tt ");
 			$conn->query("update products set ton_kho = $ton_kho where id =$product->id");
 			$ngan_sach = $this->ngan_sach();
 			$ngan_sach_price = $ngan_sach->price - $tt;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2021 at 06:34 AM
+-- Generation Time: Aug 27, 2021 at 08:57 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -61,12 +61,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `phone`, `password`, `thoi_quen`, `so_thich`, `sinh_nhat`) VALUES
-(2, 'hiep', 971086969, '4297f44b13955235245b2497399d7a93', 'dep trai', 'dit bu', '2000-03-01'),
-(3, 'hao', 2147483647, '4297f44b13955235245b2497399d7a93', 'an', 'ngu', '2000-03-03'),
-(4, 'le hao', 123123123, '4297f44b13955235245b2497399d7a93', 'hoc', 'hoc', '2000-11-11'),
-(6, 'hiep', 0, '202cb962ac59075b964b07152d234b70', '123', '123', '2021-08-09'),
-(7, 'cong', 123, '202cb962ac59075b964b07152d234b70', '123', '123', '2021-08-17'),
-(8, 'hiep123', 123, '202cb962ac59075b964b07152d234b70', '123', '123', '2021-08-16');
+(12, 'hiep', 123123123, '202cb962ac59075b964b07152d234b70', '123', '123', '2000-01-03'),
+(13, 'hao1', 123123, '4297f44b13955235245b2497399d7a93', '123123', '123123', '2000-02-02'),
+(14, 'hao2', 123123123, '4297f44b13955235245b2497399d7a93', '123123', '123123', '2021-08-10');
 
 -- --------------------------------------------------------
 
@@ -84,7 +81,7 @@ CREATE TABLE `ngan_sach` (
 --
 
 INSERT INTO `ngan_sach` (`price`, `id`) VALUES
-(1141000000, 1);
+(1243000000, 1);
 
 -- --------------------------------------------------------
 
@@ -104,12 +101,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `date`, `price`) VALUES
-(27, 8, '2021-08-23', 14000000),
-(28, 8, '2021-08-23', 12000000),
-(29, 8, '2021-08-23', 12000000),
-(30, 8, '2021-08-31', 14000000),
-(31, 8, '2021-08-18', 12000000),
-(32, 8, '2021-08-18', 12000000);
+(46, 12, '2021-08-27', 15000000),
+(47, 12, '2021-08-27', 15000000),
+(48, 12, '2021-08-27', 4000000),
+(49, 12, '2021-08-27', 14000000),
+(50, 12, '2021-08-27', 13000000);
 
 -- --------------------------------------------------------
 
@@ -129,12 +125,23 @@ CREATE TABLE `order_detail` (
 --
 
 INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `quantity`) VALUES
-(36, 27, 12, 1),
-(37, 27, 11, 1),
-(39, 28, 12, 1),
-(40, 28, 11, 1),
-(41, 29, 12, 1),
-(42, 29, 11, 1);
+(52, 46, 12, 1),
+(53, 46, 11, 1),
+(54, 46, 10, 1),
+(55, 46, 9, 1),
+(56, 47, 12, 1),
+(57, 47, 11, 1),
+(58, 47, 10, 1),
+(59, 47, 9, 1),
+(60, 48, 9, 1),
+(61, 48, 5, 1),
+(62, 48, 6, 1),
+(63, 49, 7, 1),
+(64, 49, 9, 1),
+(65, 49, 8, 1),
+(66, 49, 5, 1),
+(67, 50, 9, 1),
+(68, 50, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -160,14 +167,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category_id`, `ma_hang`, `bao_hanh`, `so_imei`, `so_serial`, `ton_kho`, `xuat_su`, `price`) VALUES
-(5, 'iphone 6', 1, '123123', 6, '312', '123', 19, 'Trung quoc', 1000000),
-(6, 'iphone 7', 1, '123321', 6, '123', '123', 10, 'My', 2000000),
-(7, 'acer nitro 5', 3, '123123123', 6, '312', '123', 19, 'Trung quoc', 5000000),
-(8, 'macbook m1', 3, '12332144', 6, '123', '123', 9, 'My', 7000000),
-(9, 'iphone 8', 1, '123123', 6, '312', '123', 19, 'Trung quoc', 1000000),
-(10, 'iphone 9', 1, '123321', 6, '123', '123', 8, 'My', 2000000),
-(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 3, 'Trung quoc', 5000000),
-(12, 'macbook m2', 3, '12332144', 6, '123', '123', 1, 'My', 7000000);
+(5, 'iphone 6', 1, '123123', 6, '312', '123', 17, 'Trung quoc', 1000000),
+(6, 'iphone 7', 1, '123321', 6, '123', '123', 50, 'My', 2000000),
+(7, 'acer nitro 5', 3, '123123123', 6, '312', '123', 50, 'Trung quoc', 5000000),
+(8, 'macbook m1', 3, '12332144', 6, '123', '123', 48, 'My', 7000000),
+(9, 'iphone 8', 1, '123123', 6, '312', '123', 40, 'Trung quoc', 1000000),
+(10, 'iphone 9', 1, '123321', 6, '123', '123', 48, 'My', 2000000),
+(11, 'acer nitro 6', 3, '123123123', 6, '312', '123', 47, 'Trung quoc', 5000000),
+(12, 'macbook m2', 3, '12332144', 6, '123', '123', 15, 'My', 7000000);
 
 -- --------------------------------------------------------
 
@@ -181,7 +188,7 @@ CREATE TABLE `tra_hang` (
   `product_price` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `order_date` date NOT NULL,
-  `customer_email` varchar(500) NOT NULL,
+  `customer_name` varchar(500) NOT NULL,
   `tt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -189,8 +196,8 @@ CREATE TABLE `tra_hang` (
 -- Dumping data for table `tra_hang`
 --
 
-INSERT INTO `tra_hang` (`id`, `product_name`, `product_price`, `quantity`, `order_date`, `customer_email`, `tt`) VALUES
-(17, 'iphone 9', 2000000, 1, '2021-08-23', '', 2000000);
+INSERT INTO `tra_hang` (`id`, `product_name`, `product_price`, `quantity`, `order_date`, `customer_name`, `tt`) VALUES
+(20, 'acer nitro 5', 5000000, 1, '2021-08-27', 'hiep', 5000000);
 
 -- --------------------------------------------------------
 
@@ -209,7 +216,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'nva@gmail.com', '202cb962ac59075b964b07152d234b70');
+(1, 'nva@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(4, 'nvb@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -277,7 +285,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `ngan_sach`
@@ -289,13 +297,13 @@ ALTER TABLE `ngan_sach`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -307,13 +315,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `tra_hang`
 --
 ALTER TABLE `tra_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

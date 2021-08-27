@@ -22,7 +22,7 @@
                         <td style="text-align: center;"><?php echo $rows->product_price; ?></td>
                         <td style="text-align: center;"><?php echo $rows->quantity; ?></td>
                         <td style="text-align: center;"><?php echo $rows->order_date; ?></td>
-                        <td style="text-align: center;"><?php echo $rows->customer_email; ?></td>
+                        <td style="text-align: center;"><?php echo $rows->customer_name; ?></td>
                         <td style="text-align: center;"><?php echo $rows->tt; ?></td>
                     </tr>
                 <?php endforeach; ?>
