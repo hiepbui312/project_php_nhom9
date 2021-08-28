@@ -43,17 +43,21 @@
                                                 <?php echo number_format($rows->price); ?>đ
                                             </td>
                                             <td style="text-align:center;">
-                                                <input class="form-control input-number" value="1" min="1" max="<?php echo $rows->ton_kho ?>" id="quantity<?php echo $rows->id; ?>" type="number" style="width: 120px;margin-left: 30px">  
+                                                <input class="form-control input-number" value="0" min="0" max="<?php echo $rows->ton_kho ?>" id="quantity<?php echo $rows->id; ?>" type="number" style="width: 120px;margin-left: 30px">  
                                             </td>
                                             
                                             <td style="text-align:center;">
-                                    <a class="btn btn-success" style="color: white" onclick="addToCart<?php echo $rows->id ?>()" href="#" >Thêm vào giỏ hàng</a>&nbsp;
+                                    <a class="btn btn-success" style="color: white" onclick="addToCart<?php echo $rows->id ?>()" >Thêm vào giỏ hàng</a>&nbsp;
                                             </td>
                                         </tr>
                                         <script>
                                              function addToCart<?php echo $rows->id ?>(){
                                                     var quantity = document.getElementById('quantity<?php echo $rows->id; ?>').value;
-                                                    location.href="index.php?controller=demo&action=addToCart&id=<?php echo $rows->id; ?>&quantity<?php echo $rows->id; ?>="+quantity;
+                                                    if(quantity == 0) {
+                                                        alert('vui lòng nhập số lượng sản phẩm')
+                                                    } else {
+                                                        location.href="index.php?controller=demo&action=addToCart&id=<?php echo $rows->id; ?>&quantity<?php echo $rows->id; ?>="+quantity;
+                                                    }  
                                             }
                                         </script>
                                         <?php endforeach; ?>
