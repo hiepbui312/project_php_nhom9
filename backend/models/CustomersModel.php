@@ -68,8 +68,14 @@
 			}
 		}
 		public function modelDelete($id){
-			$conn = Connection::getInstance();
-			$query = $conn->query("delete from customers where id=$id");
+			try{
+				$conn = Connection::getInstance();
+				$query = $conn->query("delete from customers where id=$id");
+				return true;
+			}catch(Exception $e) {
+				return false;
+			}
+			
 		}
 	}
  ?>

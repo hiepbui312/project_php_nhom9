@@ -59,9 +59,13 @@
 			//lay bien id truyen tu url
 			$id = isset($_GET["id"]) ? $_GET["id"] : 0;
 			//goi ham tu model de update du lieu
-			$record = $this->modelDelete($id);	
+			$record = $this->modelDelete($id);
+			if($record) {
+				header("location:index.php?controller=categories");
+			}
+			header("location:index.php?controller=categories&message=error");
 			//di chuyen den url
-			header("location:index.php?controller=categories");
+			
 		}
 	}
  ?>

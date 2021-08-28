@@ -1,5 +1,10 @@
 <!-- load file layout chung -->
 <?php $this->layoutPath = "Layout.php" ?>
+<?php if(isset($_GET['message'])): ?>
+    <script>
+        alert('không thể xóa sản phẩm vì là khóa ngoại')
+    </script>
+<?php endif ?>
     <form method="post" action="index.php?controller=products&action=search" class="active-cyan-4 input-search"  style="margin-left: 30px; margin-bottom: 10px; display:flex">
         <input class="form-control" type="text" name="maSp" placeholder="Tìm kiếm mã sản phẩm" aria-label="Search" 
         style="width: 200px; margin-right: 10px"/>

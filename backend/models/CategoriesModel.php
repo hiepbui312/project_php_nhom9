@@ -49,8 +49,14 @@
 		//xoa ban ghi
 		public function modelDelete($id){
 			//lay bien ket noi
-			$conn = Connection::getInstance();
-			$conn->query("delete from categories where id=$id");
+			try{
+				$conn = Connection::getInstance();
+				$conn->query("delete from categories where id=$id");
+				return true;
+			}catch(Exception $e){
+				return false;
+			}
+			
 		}
 	}
  ?>

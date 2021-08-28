@@ -1,5 +1,10 @@
 <!-- load file layout chung -->
 <?php $this->layoutPath = "Layout.php" ?>
+<?php if(isset($_GET['message'])): ?>
+    <script>
+        alert('không thể xóa người dùng vì là khóa ngoại')
+    </script>
+<?php endif ?>
 <div class="col-md-12">
     <style type="text/css">
         .pagination {

@@ -72,8 +72,14 @@
 		}
 		//xoa ban ghi
 		public function modelDelete($id){
-			$conn = Connection::getInstance();
-			$conn->query("delete from products where id=$id");
+			try{
+				$conn = Connection::getInstance();
+				$conn->query("delete from products where id=$id");
+				return true;
+			}catch(Exception $e){
+				return false;
+			}
+			
 		}	
 		//lay danh sach danh muc san pham
 		public function modelListCategory(){
