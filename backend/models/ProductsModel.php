@@ -79,7 +79,6 @@
 			}catch(Exception $e){
 				return false;
 			}
-			
 		}	
 		//lay danh sach danh muc san pham
 		public function modelListCategory(){

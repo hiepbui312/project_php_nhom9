@@ -66,10 +66,7 @@
 			//goi ham tu model de update du lieu
 			$record = $this->modelDelete($id);
 			//di chuyen den url
-			if($record) {
-				header("location:index.php?controller=Customers");
-			}
-			header("location:index.php?controller=Customers&message=error");
+			header("location:index.php?controller=Customers");
 		}
 	}
  ?>

@@ -1,10 +1,5 @@
 <!-- load file layout chung -->
 <?php $this->layoutPath = "Layout.php" ?>
-<?php if(isset($_GET['message'])): ?>
-    <script>
-        alert('không thể xóa danh mục vì là khóa ngoại')
-    </script>
-<?php endif ?>
     <div class="col-md-12">
                 <style type="text/css">
                     .pagination{padding:0px; margin:0px; float: right; margin-top: 5px;}

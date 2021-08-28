@@ -60,10 +60,7 @@
 			$id = isset($_GET["id"]) ? $_GET["id"] : 0;
 			//goi ham tu model de update du lieu
 			$record = $this->modelDelete($id);
-			if($record) {
-				header("location:index.php?controller=categories");
-			}
-			header("location:index.php?controller=categories&message=error");
+			header("location:index.php?controller=categories");
 			//di chuyen den url
 			
 		}
